@@ -34,12 +34,12 @@ private:
 	double cikt_i;
 	double is_cikt_kosullari_i;
 
-	std::string cikt;
-	veri vr;
-	liste lt;
-	veri_print pr;
-	delta dt;
-	loss ls;
-	nrn_liste nl;
-	bag_liste bl;
+	std::string cikt();
+	veri vr();
+	liste lt();
+	veri_print pr();
+	delta dt();
+	loss ls();
+	nrn_liste nl();
+	bag_liste bl();
 };

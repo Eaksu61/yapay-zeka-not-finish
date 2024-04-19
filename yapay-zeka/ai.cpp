@@ -1,14 +1,17 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<iostream>
+#include<vector>
+#include<string>
 #include"aiveri.h"
 #include"listol.h"
 #include"test.h"
 #include"loss_bulma.h"
 #include"delta.h"
-#include"ai.h"
 #include"nrnlistele.h"
 #include"bagliste.h"
+#include"ai.h"
 
 /*
 vr : ihtiyacýmýz olan bütün veriler içinde
