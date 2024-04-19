@@ -12,7 +12,7 @@
 #include"bagliste.h"
 
 
-class ai {
+class ai_create {
 public:
 	std::string gizlimod_ac(std::vector<int> a);
 	std::string ai_main();

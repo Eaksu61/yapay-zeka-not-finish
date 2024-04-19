@@ -5,7 +5,6 @@
 #include<string>
 #include"aiveri.h"
 #include"listol.h"
-#include"islem.h"
 #include"test.h"
 #include"loss_bulma.h"
 
