@@ -17,6 +17,6 @@ public:
 	double logloss();
 private:
 	veri vr;
-	std::vector<double>& y_true;
-	std::vector<double>& y_pred;
+	std::vector<double> y_true;
+	std::vector<double> y_pred;
 };

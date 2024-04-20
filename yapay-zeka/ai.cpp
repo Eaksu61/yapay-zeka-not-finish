@@ -1,9 +1,6 @@
 #include<iostream>
 #include<vector>
 #include<string>
-#include<iostream>
-#include<vector>
-#include<string>
 #include"aiveri.h"
 #include"listol.h"
 #include"test.h"
@@ -23,12 +20,8 @@ nl : baðlantý ile vr içindeki nrn vectorünün içindeki boþ deðerlerini vr içindek
 bl : vr içindeki delta deðeri kullanýlarak vr içindeki bag vectorünün içindeki deðerler güncellenir
 
 */
-std::string ai_create::gizlimod_ac(std::vector<int> a) {
-	ai_gizli = a;
-	cikt = "istenilen veriler gizlendi";
-	return cikt;
-}
-std::string ai_create::ai_main() {// nrn ve bag oluþtulurdu
+
+std::string ai::ai_main() {// nrn ve bag oluþtulurdu
 	lt.vr_es(vr);
 	lt.bag_nrn_k();
 	vr.nrn = lt.r_nrn();
@@ -36,15 +29,18 @@ std::string ai_create::ai_main() {// nrn ve bag oluþtulurdu
 	cikt = "listeler oluþtu";
 	return cikt;
 }
-std::string ai_create::listele() {// nrn vectorü doldururdu
+std::string ai::listele() {// nrn vectorü doldururdu
 	nl.vr_es(vr);
 	nl.nrn_hs();
 	vr.nrn = nl.nrn;
 	cikt = "listeler eþitlendi";
 	return cikt;
 }
-std::string ai_create::dogruluk() {
+std::string ai::dogruluk() {
 	ls.vr_es(vr);
+	ls.x_pred_h();
+	ls.x_true_h();
+	vr.loss=ls.logloss();
 	cikt = "nöron çýktýsý oluþturuldu";
 	return cikt;
 }

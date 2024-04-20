@@ -2,6 +2,8 @@
 #include"ai.h"
 
 int main() {
-	ai_create ai();
-	return 0;
+	ai a;
+	a.ai_main();
+	a.listele();
+	return 31;
 }

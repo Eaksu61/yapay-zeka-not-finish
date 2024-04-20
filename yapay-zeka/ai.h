@@ -12,17 +12,13 @@
 #include"bagliste.h"
 
 
-class ai_create {
+struct ai {
 public:
-	std::string gizlimod_ac(std::vector<int> a);
 	std::string ai_main();
 	std::string listele();
 	std::string dogruluk();
 	std::string ogrenme();
 	std::string dongu();
-	
-private:
-	std::vector<int> ai_gizli;
 
 	std::vector<std::vector<std::vector<double>>> nrn_i;
 	std::vector<std::vector<std::vector<std::vector<double>>>> bag_i;
@@ -34,12 +30,13 @@ private:
 	double cikt_i;
 	double is_cikt_kosullari_i;
 
-	std::string cikt();
-	veri vr();
-	liste lt();
-	veri_print pr();
-	delta dt();
-	loss ls();
-	nrn_liste nl();
-	bag_liste bl();
+private:
+	std::string cikt;
+	veri vr;
+	liste lt;
+	veri_print pr;
+	delta dt;
+	loss ls;
+	nrn_liste nl;
+	bag_liste bl;
 };
