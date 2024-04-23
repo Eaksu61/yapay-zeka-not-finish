@@ -7,9 +7,6 @@
 #include"loss_bulma.h"
 #include"delta.h"
 
-void delta::inp_veri(veri v) {
-	vr = v;
-}
 double delta::delta_cikt() {
 	return vr.loss * vr.alpha;
 }

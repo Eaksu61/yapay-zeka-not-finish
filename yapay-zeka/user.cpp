@@ -5,5 +5,6 @@ int main() {
 	ai a;
 	a.ai_main();
 	a.listele();
-	return 1;
+	a.dogruluk();
+	return 0;
 }

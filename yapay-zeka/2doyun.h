@@ -13,6 +13,7 @@ public:
 	std::vector<std::vector<int>> harita();
 	std::vector<int> karakter_yem_bosluk();
 	void oyna(int ax, int bx, int ay, int by);
+	int puan_kont();
 	int puan;
 private:
 	std::random_device rd;

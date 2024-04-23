@@ -7,6 +7,7 @@
 #include<algorithm>
 #include"bagliste.h"
 #include"nrnlistele.h"
+#include"2doyun.h"
 
 std::vector<double> veri::softmax(const std::vector<double>& inputs) {
 	std::vector<double> exp_values(inputs.size());
@@ -20,15 +21,18 @@ std::vector<double> veri::softmax(const std::vector<double>& inputs) {
 	}
 	return exp_values;
 }
+
 double veri::r_fonk(double x) {
 	return 1 / (1 + std::exp(-x));
 }
-std::random_device rd;
-std::mt19937 gen(rd());
+
 double veri::rd() {
+	std::random_device rd;
+	std::mt19937 gen(rd());
 	std::uniform_real_distribution<> dis(0, 1);
 	return std::round(dis(gen) * 100) / 100;
 }
+
 void veri::veri_es() {
 	katman = { 4,3,2,2 };
 	bag_tur = 1;
@@ -43,8 +47,9 @@ void veri::veri_es() {
 	tur = 0;
 	hedef_tur = 10;
 	inp_a = 1;
-	input = {};
+	input = {1,0,1,1};
 }
+
 void veri::input_es() {
 	for (int i = 0; i < katman[0]; i++) {
 		input.push_back(rd());

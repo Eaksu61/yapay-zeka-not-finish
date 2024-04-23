@@ -10,7 +10,7 @@
 #include"delta.h"
 #include"nrnlistele.h"
 #include"bagliste.h"
-
+#include"2doyun.h"
 
 struct ai {
 public:
@@ -30,8 +30,8 @@ public:
 	double cikt_i;
 	double is_cikt_kosullari_i;
 
-private:
 	std::string cikt;
+
 	veri vr;
 	liste lt;
 	veri_print pr;

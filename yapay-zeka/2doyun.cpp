@@ -35,7 +35,6 @@ void oyun::yem_olustur() {
 			d = 1;
 		}
 	}
-	
 }
 std::vector<std::vector<int>> oyun::harita() {
 	return ls;
@@ -76,5 +75,10 @@ void oyun::oyna(int ax, int bx, int ay, int by) {
 			ls[kr[0]][kr[1]] = 0;
 			ls[kr[0]][kr[1] + 1] = 1;
 		}
+	}
+}
+int oyun::puan_kont() {// yemin bitip bitmedðini kontrol ediyor
+	if (ls[ym[0]][ym[1]] == 1) {
+		return 1;
 	}
 }

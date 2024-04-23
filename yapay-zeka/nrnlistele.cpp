@@ -3,9 +3,6 @@
 #include"nrnlistele.h"
 
 
-void nrn_liste::vr_es(veri v){
-        vr=v;
-}
 void nrn_liste::nrn_hs() {
 		double tp = 0;
 		for (int i = 0; i < vr.nrn.size(); i++) {

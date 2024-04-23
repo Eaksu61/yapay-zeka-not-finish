@@ -12,11 +12,9 @@
 class liste{
 public:
 	double rd();
-	void vr_es(veri v);
 	void bag_nrn_k();
 	std::vector<std::vector<std::vector<std::vector<double>>>> r_bag();
 	std::vector<std::vector<std::vector<double>>> r_nrn();
-private:
 	veri vr;
 	std::unordered_set<double> uniqueNumbers;
 };

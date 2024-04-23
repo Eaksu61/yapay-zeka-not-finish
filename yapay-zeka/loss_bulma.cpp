@@ -6,12 +6,9 @@
 #include"test.h"
 #include"loss_bulma.h"
 #include <cmath>
+#include"2doyun.h"
 
-void loss::vr_es(veri v) {
-	vr = v;
-	y_true = {};
-	y_pred = {};
-}
+
 void loss::x_true_h() {//burasý kullanýcýya göre þekillenmesi gerekiyor
 	for (int i = 0; i < vr.nrn[0].size(); i++) {
 		

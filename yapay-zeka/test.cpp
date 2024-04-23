@@ -5,9 +5,6 @@
 #include"listol.h"
 #include"test.h"
 
-void veri_print::esitle(veri v) {
-	vr = v;
-}
 void veri_print::print_nrn() {
 	for (int i = 0; i < vr.nrn.size(); i++) {
 		for (int ii = 0; ii < vr.nrn[i].size(); ii++) {

@@ -9,6 +9,7 @@
 #include"nrnlistele.h"
 #include"bagliste.h"
 #include"ai.h"
+#include"2doyun.h"
 
 /*
 vr : ihtiyacýmýz olan bütün veriler içinde
@@ -22,7 +23,8 @@ bl : vr içindeki delta deðeri kullanýlarak vr içindeki bag vectorünün içindeki d
 */
 
 std::string ai::ai_main() {// nrn ve bag oluþtulurdu
-	lt.vr_es(vr);
+	vr.veri_es();
+	lt.vr = vr;
 	lt.bag_nrn_k();
 	vr.nrn = lt.r_nrn();
 	vr.bag = lt.r_bag();
@@ -30,16 +32,16 @@ std::string ai::ai_main() {// nrn ve bag oluþtulurdu
 	return cikt;
 }
 std::string ai::listele() {// nrn vectorü doldururdu
-	nl.vr_es(vr);
+	nl.vr = vr;
 	nl.nrn_hs();
 	vr.nrn = nl.nrn;
 	cikt = "listeler eþitlendi";
 	return cikt;
 }
 std::string ai::dogruluk() {
-	ls.vr_es(vr);
+	ls.vr = vr;
 	ls.x_pred_h();
-	ls.x_true_h();
+	ls.x_true_h();// x_true nun nasýl belileneceði daha bulunamadý (gerekli)
 	vr.loss=ls.logloss();
 	cikt = "nöron çýktýsý oluþturuldu";
 	return cikt;

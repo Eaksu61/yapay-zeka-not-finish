@@ -10,8 +10,6 @@
 
 class delta {
 public:
-	void inp_veri(veri v);
 	double delta_cikt();
-private:
 	veri vr;
 };

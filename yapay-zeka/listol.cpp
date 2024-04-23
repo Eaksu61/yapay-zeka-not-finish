@@ -19,9 +19,6 @@ double liste::rd() {
 	uniqueNumbers.insert(randomNumber);
 	return randomNumber;
 }
-void liste::vr_es(veri v) {
-	vr = v;
-}
 void liste::bag_nrn_k() {
 	srand((unsigned)time(0));
 	for (int i = 0; i < vr.katman.size(); i++) {
