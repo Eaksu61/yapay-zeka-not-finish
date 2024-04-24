@@ -36,21 +36,17 @@ void oyun::yem_olustur() {
 		}
 	}
 }
-std::vector<std::vector<int>> oyun::harita() {
-	return ls;
-}
-std::vector<int> oyun::karakter_yem_bosluk() {
+void oyun::karakter_yem_bosluk() {
 	bs = { 0,0 };
 	bs[0] = kr[0] - ym[0];
 	bs[1] = kr[1] - ym[1];
-	return bs;
 }
-void oyun::oyna(int ax, int bx, int ay, int by) {
+void oyun::oyna(double ax, double bx, double ay, double by) {
 	if (ax == bx) {
-		//hicbirsey
+		//hicbirsey olmuyo
 	}
 	else if (ax > bx) {
-		if (kr[0] != 1) {
+		if (kr[0] != 1.0) {
 			ls[kr[0]][kr[1]] = 0;
 			ls[kr[0] - 1][kr[1]] = 1;
 		}
@@ -62,10 +58,10 @@ void oyun::oyna(int ax, int bx, int ay, int by) {
 		}
 	}
 	if (ay == by) {
-		//hicbirsey
+		//hicbirsey olmuyo
 	}
 	else if (ay > by) {
-		if (kr[1]!=0) {
+		if (kr[1]!=0.0) {
 			ls[kr[0]][kr[1]] = 0;
 			ls[kr[0]][kr[1] - 1] = 1;
 		}
@@ -75,10 +71,5 @@ void oyun::oyna(int ax, int bx, int ay, int by) {
 			ls[kr[0]][kr[1]] = 0;
 			ls[kr[0]][kr[1] + 1] = 1;
 		}
-	}
-}
-int oyun::puan_kont() {// yemin bitip bitmedðini kontrol ediyor
-	if (ls[ym[0]][ym[1]] == 1) {
-		return 1;
 	}
 }

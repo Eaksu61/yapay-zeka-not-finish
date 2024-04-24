@@ -18,17 +18,12 @@ public:
 	std::string listele();
 	std::string dogruluk();
 	std::string ogrenme();
-	std::string dongu();
+	std::string inp();
 
-	std::vector<std::vector<std::vector<double>>> nrn_i;
-	std::vector<std::vector<std::vector<std::vector<double>>>> bag_i;
-	int inp_a_i;
-	std::vector<double> input_i;
-	double delta_i;
-	double alpha_i;
-	double loss_i;
-	double cikt_i;
-	double is_cikt_kosullari_i;
+	std::string oyun_main();
+	std::string oyun_kontrol();
+
+	std::vector<std::vector<double>> kcikt;
 
 	std::string cikt;
 
@@ -39,4 +34,5 @@ public:
 	loss ls;
 	nrn_liste nl;
 	bag_liste bl;
+	oyun yn;
 };
