@@ -30,7 +30,7 @@ double veri::rd() {
 	return std::round(dis(gen) * 100) / 100;
 }
 void veri::veri_es() {
-	katman = { 4,3,2,2 };
+	katman = { 1,100,100,25,4 };
 	bag_tur = 1;
 	bag_sek = {};
 	nrn = {};

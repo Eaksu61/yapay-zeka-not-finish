@@ -23,7 +23,7 @@ bl : vr içindeki delta deðeri kullanýlarak vr içindeki bag vectorünün içindeki d
 */
 
 std::string ai::ai_main() {// nrn ve bag oluþtulurdu
-	vr.veri_es();
+	std::cout << "ai_main\n";
 	lt.vr = vr;
 	lt.bag_nrn_k();
 	vr.nrn = lt.r_nrn();
@@ -32,6 +32,9 @@ std::string ai::ai_main() {// nrn ve bag oluþtulurdu
 	return cikt;
 }
 std::string ai::inp() {
+	std::cout << "inp\n";
+	vr.veri_es();
+	vr.katman[0] = yn.ls.size() * yn.ls[0].size();
 	std::vector<double> k;
 	for (int i = 0; i < yn.ls.size(); i++) {
 		for (int ii = 0; ii < yn.ls[i].size(); ii++) {
@@ -43,6 +46,7 @@ std::string ai::inp() {
 	return cikt;
 }
 std::string ai::listele() {// nrn vectorü doldururdu
+	std::cout << "listele\n";
 	nl.vr = vr;
 	nl.nrn_hs();
 	vr.nrn = nl.nrn;
@@ -51,14 +55,16 @@ std::string ai::listele() {// nrn vectorü doldururdu
 	return cikt;
 }
 std::string ai::dogruluk() {
+	std::cout << "dogruluk\n";
 	ls.vr = vr;
 	ls.x_pred_h();
-	ls.x_true_h();// x_true nun nasýl belileneceði daha bulunamadý (gerekli)
+	ls.x_true_h();// x_true nun nasýl belileneceði bulundu ama tam uyumlu deðil
 	vr.loss = ls.logloss();
 	cikt = "nöron çýktýsý oluþturuldu";
 	return cikt;
 }
 std::string ai::ogrenme() {
+	std::cout << "ogrenme\n";
 	dt.vr = vr;
 	vr.delta = dt.delta_cikt();
 	bl.vr = vr;
@@ -68,6 +74,11 @@ std::string ai::ogrenme() {
 	return cikt;
 }
 std::string ai::oyun_main() {
+	std::cout << "oyun_main\n";
+	yn.x = 10;
+	yn.y = 10;
+	yn.ym = { 0,0 };
+	yn.kr = { 0,0 };
 	yn.harita_olustur();
 	yn.karakter_olustur();
 	yn.yem_olustur();
@@ -75,6 +86,7 @@ std::string ai::oyun_main() {
 	return cikt;
 }
 std::string ai::oyun_kontrol() {
+	std::cout << "oyun_kontrol\n";
 	yn.oyna(vr.nrn[vr.nrn.size() - 1][0][0], vr.nrn[vr.nrn.size() - 1][1][0], vr.nrn[vr.nrn.size() - 1][2][0], vr.nrn[vr.nrn.size() - 1][3][0]);
 	yn.karakter_yem_bosluk();
 	vr.bs = yn.bs;

@@ -7,8 +7,11 @@ int main() {
 	a.oyun_main();
 	a.inp();
 	a.ai_main();
-	a.listele();
-	a.dogruluk();
-	a.ogrenme();
+	for (int i = 0; i < 10000; i++) {
+		a.listele();
+		a.oyun_kontrol();
+		a.dogruluk();
+		a.ogrenme();
+	}
 	return 0;
 }

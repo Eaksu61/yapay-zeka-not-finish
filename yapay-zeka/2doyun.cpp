@@ -17,8 +17,8 @@ void oyun::harita_olustur() {
 	}
 }
 void oyun::karakter_olustur() {
-	int ax = rnd(x);
-	int ay = rnd(y);
+	int ax = rnd(x-1);
+	int ay = rnd(y-1);
 	ls[ax][ay] = 1;
 	kr[0] = ax;
 	kr[1] = ay;
@@ -26,8 +26,8 @@ void oyun::karakter_olustur() {
 void oyun::yem_olustur() {
 	int d = 0;
 	while (d == 0) {
-		int ax = rnd(x);
-		int ay = rnd(y);
+		int ax = rnd(x-1);
+		int ay = rnd(y-1);
 		if (ls[ax][ay] == 0) {
 			ls[ax][ay] = 2;
 			ym[0] = ax;
@@ -42,11 +42,12 @@ void oyun::karakter_yem_bosluk() {
 	bs[1] = kr[1] - ym[1];
 }
 void oyun::oyna(double ax, double bx, double ay, double by) {
+	// ax,bx,ay,by : ls.sk
 	if (ax == bx) {
 		//hicbirsey olmuyo
 	}
 	else if (ax > bx) {
-		if (kr[0] != 1.0) {
+		if (kr[0] != 0.0) {
 			ls[kr[0]][kr[1]] = 0;
 			ls[kr[0] - 1][kr[1]] = 1;
 		}
@@ -71,5 +72,9 @@ void oyun::oyna(double ax, double bx, double ay, double by) {
 			ls[kr[0]][kr[1]] = 0;
 			ls[kr[0]][kr[1] + 1] = 1;
 		}
+	}
+	if (ls[ym[0]][ym[1]] == 1) {
+		yem_olustur();
+		puan++;
 	}
 }
