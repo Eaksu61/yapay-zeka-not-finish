@@ -11,6 +11,7 @@
 #include"nrnlistele.h"
 #include"bagliste.h"
 #include"2doyun.h"
+#include"kayıt.h"
 
 struct ai {
 public:
@@ -23,9 +24,17 @@ public:
 	std::string oyun_main();
 	std::string oyun_kontrol();
 
+	std::string veri_al();
+	std::string ekran();
+
+	std::string nrn_cikt();
+	std::string bag_cikt();
+
 	std::vector<std::vector<double>> kcikt;
 
 	std::string cikt;
+
+	int hata_ayıklama;
 
 	veri vr;
 	liste lt;
@@ -35,4 +44,5 @@ public:
 	nrn_liste nl;
 	bag_liste bl;
 	oyun yn;
+	kaydet kd;
 };

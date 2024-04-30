@@ -17,6 +17,7 @@ void oyun::harita_olustur() {
 	}
 }
 void oyun::karakter_olustur() {
+	puan = 0;
 	int ax = rnd(x-1);
 	int ay = rnd(y-1);
 	ls[ax][ay] = 1;
@@ -36,6 +37,7 @@ void oyun::yem_olustur() {
 		}
 	}
 }
+
 void oyun::karakter_yem_bosluk() {
 	bs = { 0,0 };
 	bs[0] = kr[0] - ym[0];
@@ -50,12 +52,14 @@ void oyun::oyna(double ax, double bx, double ay, double by) {
 		if (kr[0] != 0.0) {
 			ls[kr[0]][kr[1]] = 0;
 			ls[kr[0] - 1][kr[1]] = 1;
+			kr[0] = kr[0] - 1;
 		}
 	}
 	else if (ax < bx) {
 		if (kr[0] != ls.size() - 1) {
 			ls[kr[0]][kr[1]] = 0;
 			ls[kr[0] + 1][kr[1]] = 1;
+			kr[0] = kr[0] + 1;
 		}
 	}
 	if (ay == by) {
@@ -65,16 +69,18 @@ void oyun::oyna(double ax, double bx, double ay, double by) {
 		if (kr[1]!=0.0) {
 			ls[kr[0]][kr[1]] = 0;
 			ls[kr[0]][kr[1] - 1] = 1;
+			kr[1] = kr[1] - 1;
 		}
 	}
 	else if (ay < by) {
 		if (kr[1] != ls[kr[0]].size() - 1) {
 			ls[kr[0]][kr[1]] = 0;
 			ls[kr[0]][kr[1] + 1] = 1;
+			kr[1] = kr[1] + 1;
 		}
 	}
 	if (ls[ym[0]][ym[1]] == 1) {
 		yem_olustur();
-		puan++;
+		puan = puan + 1;
 	}
 }

@@ -10,6 +10,7 @@
 #include"bagliste.h"
 #include"ai.h"
 #include"2doyun.h"
+#include"kayıt.h"
 
 /*
 vr : ihtiyacımız olan bütün veriler içinde
@@ -23,7 +24,7 @@ bl : vr içindeki delta değeri kullanılarak vr içindeki bag vectorünün içindeki d
 */
 
 std::string ai::ai_main() {// nrn ve bag oluştulurdu
-	std::cout << "ai_main\n";
+	if (hata_ayıklama == 1) { std::cout << "ai_main\n"; }
 	lt.vr = vr;
 	lt.bag_nrn_k();
 	vr.nrn = lt.r_nrn();
@@ -32,7 +33,7 @@ std::string ai::ai_main() {// nrn ve bag oluştulurdu
 	return cikt;
 }
 std::string ai::inp() {
-	std::cout << "inp\n";
+	if (hata_ayıklama == 1) { std::cout << "inp\n"; }
 	vr.veri_es();
 	vr.katman[0] = yn.ls.size() * yn.ls[0].size();
 	std::vector<double> k;
@@ -46,7 +47,7 @@ std::string ai::inp() {
 	return cikt;
 }
 std::string ai::listele() {// nrn vectorü doldururdu
-	std::cout << "listele\n";
+	if (hata_ayıklama) { std::cout << "listele\n"; }
 	nl.vr = vr;
 	nl.nrn_hs();
 	vr.nrn = nl.nrn;
@@ -55,7 +56,7 @@ std::string ai::listele() {// nrn vectorü doldururdu
 	return cikt;
 }
 std::string ai::dogruluk() {
-	std::cout << "dogruluk\n";
+	if (hata_ayıklama) { std::cout << "dogruluk\n"; }
 	ls.vr = vr;
 	ls.x_pred_h();
 	ls.x_true_h();// x_true nun nasıl belileneceği bulundu ama tam uyumlu değil
@@ -64,7 +65,7 @@ std::string ai::dogruluk() {
 	return cikt;
 }
 std::string ai::ogrenme() {
-	std::cout << "ogrenme\n";
+	if (hata_ayıklama) { std::cout << "ogrenme\n"; }
 	dt.vr = vr;
 	vr.delta = dt.delta_cikt();
 	bl.vr = vr;
@@ -74,7 +75,7 @@ std::string ai::ogrenme() {
 	return cikt;
 }
 std::string ai::oyun_main() {
-	std::cout << "oyun_main\n";
+	if (hata_ayıklama) { std::cout << "oyun_main\n"; }
 	yn.x = 10;
 	yn.y = 10;
 	yn.ym = { 0,0 };
@@ -86,10 +87,32 @@ std::string ai::oyun_main() {
 	return cikt;
 }
 std::string ai::oyun_kontrol() {
-	std::cout << "oyun_kontrol\n";
+	if (hata_ayıklama) { std::cout << "oyun_kontrol\n"; }
 	yn.oyna(vr.nrn[vr.nrn.size() - 1][0][0], vr.nrn[vr.nrn.size() - 1][1][0], vr.nrn[vr.nrn.size() - 1][2][0], vr.nrn[vr.nrn.size() - 1][3][0]);
 	yn.karakter_yem_bosluk();
 	vr.bs = yn.bs;
 	cikt = "oyun kontrol edildi";
+	return cikt;
+}
+std::string ai::veri_al() {
+	kd.veri_all.push_back(yn.ls);
+	cikt = "veri alındı";
+	return cikt;
+}
+std::string ai::ekran() {
+	kd.kayıt_bastan_sona(0.001);
+	cikt = "konsola yazıldı";
+	return cikt;
+}
+std::string ai::nrn_cikt() {
+	pr.vr = vr;
+	pr.print_nrn();
+	cikt = "nrn_cikt";
+	return cikt;
+}
+std::string ai::bag_cikt() {
+	pr.vr = vr;
+	pr.print_bag();
+	cikt = "bag_cikt";
 	return cikt;
 }

@@ -132,6 +132,7 @@
     <ClCompile Include="aiveri.cpp" />
     <ClCompile Include="bagliste.cpp" />
     <ClCompile Include="delta.cpp" />
+    <ClCompile Include="kayıt.cpp" />
     <ClCompile Include="listol.cpp" />
     <ClCompile Include="loss_bulma.cpp" />
     <ClCompile Include="nrnlistele.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="aiveri.h" />
     <ClInclude Include="bagliste.h" />
     <ClInclude Include="delta.h" />
+    <ClInclude Include="kayıt.h" />
     <ClInclude Include="listol.h" />
     <ClInclude Include="loss_bulma.h" />
     <ClInclude Include="nrnlistele.h" />
