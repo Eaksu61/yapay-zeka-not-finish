@@ -8,6 +8,7 @@
 #include"bagliste.h"
 #include"nrnlistele.h"
 
+// ahh sofmax unutuldun aiveri içinde...
 std::vector<double> veri::softmax(const std::vector<double>& inputs) {
 	std::vector<double> exp_values(inputs.size());
 	double sum = 0.0;

@@ -42,5 +42,9 @@ void veri_print::print_2d(std::vector<std::vector<int>> ve) {
 		}
 		std::cout << "\n";
 	}
+	for (int i = 0; i < vr.nrn[vr.nrn.size() - 1].size(); i++) {
+		std::cout << vr.nrn[vr.nrn.size() - 1][i][0] << "||";
+	}
+	std::cout << "\n";
 	std::cout << "\n______________\n";
 }

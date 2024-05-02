@@ -100,7 +100,8 @@ std::string ai::veri_al() {
 	return cikt;
 }
 std::string ai::ekran() {
-	kd.kayıt_bastan_sona(0.001);
+	kd.vr = vr;
+	kd.kayıt_bastan_sona(0.00001);
 	cikt = "konsola yazıldı";
 	return cikt;
 }
@@ -114,5 +115,11 @@ std::string ai::bag_cikt() {
 	pr.vr = vr;
 	pr.print_bag();
 	cikt = "bag_cikt";
+	return cikt;
+}
+std::string ai::ekran_son() {
+	kd.vr = vr;
+	kd.kayıt_son();
+	cikt = "konsola yazıldı";
 	return cikt;
 }

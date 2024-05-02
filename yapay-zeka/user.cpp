@@ -9,9 +9,9 @@ int main() {
 	a.inp();
 	a.ai_main();
 	a.veri_al();
-	a.bag_cikt();
-	for (int i = 0; i < 2; i++) {
-		std::cout << i << "\n";
+	a.ekran_son();
+	//a.bag_cikt();
+	for (int i = 0; i < 10000; i++) {
 		a.listele();
 		a.oyun_kontrol();
 		a.dogruluk();
@@ -19,9 +19,11 @@ int main() {
 		a.veri_al();
 	}
 	std::cout << "\n\n\n\n\n";
-	a.bag_cikt();
+	a.ekran_son();
+	//a.bag_cikt();
 	std::cout << "\n";
 	std::cout <<"puan : "<< a.yn.puan;
 	std::cout << "\n";
+
 	return 0;
 }

@@ -8,6 +8,7 @@
 #include <ctime>
 #include"aiveri.h"
 #include"listol.h"
+#include<algorithm>
 
 class liste{
 public:
@@ -16,5 +17,4 @@ public:
 	std::vector<std::vector<std::vector<std::vector<double>>>> r_bag();
 	std::vector<std::vector<std::vector<double>>> r_nrn();
 	veri vr;
-	std::unordered_set<double> uniqueNumbers;
 };

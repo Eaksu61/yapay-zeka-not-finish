@@ -8,19 +8,13 @@
 #include"aiveri.h"
 #include"listol.h"
 
-std::unordered_set<double> uniqueNumbers;
+static std::mt19937 mt(std::random_device{}());
+double liste::rd(){
+	std::uniform_real_distribution<double> dist(0.0, 1.0);
 
-double liste::rd() {
-	srand((unsigned)time(0));
-	double randomNumber;
-	do {
-		randomNumber = static_cast<double>(rand()) / static_cast<double>(RAND_MAX);
-	} while (uniqueNumbers.find(randomNumber) != uniqueNumbers.end());
-	uniqueNumbers.insert(randomNumber);
-	return randomNumber;
+	return dist(mt);
 }
 void liste::bag_nrn_k() {
-	srand((unsigned)time(0));
 	for (int i = 0; i < vr.katman.size(); i++) {
 		vr.nrn.push_back({});
 		if (i > 0) {

@@ -26,6 +26,7 @@ public:
 
 	std::string veri_al();
 	std::string ekran();
+	std::string ekran_son();
 
 	std::string nrn_cikt();
 	std::string bag_cikt();
