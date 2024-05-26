@@ -15,7 +15,7 @@ void loss::x_true_h() {
 
 	// Eðer bs[0] ve bs[1] her ikisi de 0 ise, hareket yok anlamýna gelir.
 	if (vr.bs[0] == 0 && vr.bs[1] == 0) {
-		return; // y_true zaten [0, 0, 0, 0] olarak ayarlandý.
+		y_true = { 0.5, 0.5, 0.5, 0.5 };
 	}
 
 	// Dikey hareketler için y_true vektörünü güncelle.

@@ -10,7 +10,7 @@ int main() {
 	a.ai_main();
 	a.veri_al();
 	a.indd = -1;
-	for (int i = 0; i < 200; i++) {
+	for (int i = 0; i < 20000; i++) {
 		a.listele();
 		a.oyun_kontrol();
 		a.dogruluk_lg();
@@ -23,7 +23,11 @@ int main() {
 		a.ks_veri_al();
 	}
 	std::cout << "\n\n\n\n\n";
-	a.ks_cikt(10);
+	a.ks_cikt(1999);
+	std::cout << "\n\n\n\n\n";
+	a.nrn_cikt();
+	std::cout << "\n\n\n\n\n";
+	a.bag_cikt();
 	std::cout << "\n";
 	std::cout <<"puan : "<< a.yn.puan;
 	std::cout << "\n";

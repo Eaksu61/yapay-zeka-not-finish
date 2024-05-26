@@ -8,6 +8,5 @@
 #include"delta.h"
 
 double delta::delta_cikt() {
-	std::cout<<vr.loss<<"\n";
 	return vr.loss * vr.alpha;
 }
