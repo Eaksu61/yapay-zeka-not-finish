@@ -9,6 +9,7 @@ int oyun::rnd(int x) {
 	return dist(gen);
 }
 void oyun::harita_olustur() {
+	ls = {};
 	for (int i = 0; i < x; i++) {
 		ls.push_back({});
 		for (int ii = 0; ii < y; ii++) {

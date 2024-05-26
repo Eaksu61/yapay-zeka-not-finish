@@ -55,13 +55,23 @@ std::string ai::listele() {// nrn vectorü doldururdu
 	kcikt = vr.nrn[vr.nrn.size()-1];
 	return cikt;
 }
-std::string ai::dogruluk() {
-	if (hata_ayýklama) { std::cout << "dogruluk\n"; }
+std::string ai::dogruluk_lg() {
+	if (hata_ayýklama) { std::cout << "dogruluk1\n"; }
 	ls.vr = vr;
 	ls.x_pred_h();
 	ls.x_true_h();// x_true nun nasýl belileneceði bulundu ama tam uyumlu deðil
 	vr.loss = ls.logloss();
 	cikt = "nöron çýktýsý oluþturuldu";
+	return cikt;
+}
+std::string ai::dogruluk_ms() {
+	if (hata_ayýklama) { std::cout << "dogruluk2\n"; }
+	ls.vr = vr;
+	ls.x_pred_h();
+	ls.x_true_h();// x_true nun nasýl belileneceði bulundu ama tam uyumlu deðil
+	vr.loss = ls.mse();
+	cikt = "nöron çýktýsý oluþturuldu";
+	cikt = "ciktik";
 	return cikt;
 }
 std::string ai::ogrenme() {
@@ -121,5 +131,35 @@ std::string ai::ekran_son() {
 	kd.vr = vr;
 	kd.kayýt_son();
 	cikt = "konsola yazýldý";
+	return cikt;
+}
+std::string ai::yeni() {
+	yn.x = 10;
+	yn.y = 10;
+	yn.bs = { 0,0 };
+	yn.ym = { 0,0 };
+	yn.kr = { 0,0 };
+	yn.harita_olustur();
+	yn.karakter_olustur();
+	yn.yem_olustur();
+	cikt = "map yenilendi";
+	return cikt;
+}
+std::string ai::ks_veri_al() {
+	kd.veri_kesit[indd].push_back(yn.ls);
+	cikt = "veri alýndý";
+	return cikt;
+}
+std::string ai::ks_cikt(int ind) {
+	for (int i = 0; i < kd.veri_kesit[ind].size(); i++) {
+		pr.print_2d_d(kd.veri_kesit[ind][i]);
+	}
+	cikt = "by by";
+	return cikt;
+}
+std::string ai::ks_yeni() {
+	indd++;
+	kd.veri_kesit.push_back({});
+	cikt = "bit artýk";
 	return cikt;
 }

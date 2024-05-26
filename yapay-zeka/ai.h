@@ -17,24 +17,30 @@ struct ai {
 public:
 	std::string ai_main();
 	std::string listele();
-	std::string dogruluk();
+	std::string dogruluk_lg();
+	std::string dogruluk_ms();
 	std::string ogrenme();
 	std::string inp();
 
 	std::string oyun_main();
 	std::string oyun_kontrol();
+	std::string yeni();
 
 	std::string veri_al();
 	std::string ekran();
 	std::string ekran_son();
+	std::string ks_veri_al();
+	std::string ks_yeni();
 
 	std::string nrn_cikt();
 	std::string bag_cikt();
+	std::string ks_cikt(int ind);
 
 	std::vector<std::vector<double>> kcikt;
 
 	std::string cikt;
 
+	int indd;
 	int hata_ayıklama;
 
 	veri vr;

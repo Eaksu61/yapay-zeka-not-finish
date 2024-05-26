@@ -15,6 +15,7 @@ public:
 	void x_true_h();
 	void x_pred_h();
 	double logloss();
+	double mse();
 	veri vr;
 	std::vector<double> y_true;
 	std::vector<double> y_pred;

@@ -48,3 +48,12 @@ void veri_print::print_2d(std::vector<std::vector<int>> ve) {
 	std::cout << "\n";
 	std::cout << "\n______________\n";
 }
+void veri_print::print_2d_d(std::vector<std::vector<int>> ve) {
+	for (int i = 0; i < ve.size(); i++) {
+		for (int ii = 0; ii < ve[i].size(); ii++) {
+			std::cout << "," << ve[i][ii];
+		}
+		std::cout << "\n";
+	}
+	std::cout << "\n______________\n";
+}
